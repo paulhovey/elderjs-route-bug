@@ -13,7 +13,7 @@ module.exports = {
     hooks: false,
     performance: false,
     build: false,
-    automagic: false,
+    automagic: true,
   },
   hooks: {
     // disable: ['elderWriteHtmlFileToPublic'], // this is used to disable internal hooks. Uncommenting this would disabled writing your files on build.

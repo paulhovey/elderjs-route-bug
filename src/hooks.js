@@ -80,30 +80,24 @@ const hooks = [
   //   },
   // },
 
-  // {
-  //   hook: 'bootstrap',
-  //   name: 'populateDataForAllRequests',
-  //   description:
-  //     'The goal of this hook is to show you that you can get data from anywhere and add it to the data object.',
-  //   priority: 50,
-  //   run: async ({ data }) => {
-  //     // when you uncomment this, check the homepage for a new box at the top.
-  //     return {
-  //       data: {
-  //         ...data,
-  //         testingHooks: true,
-  //         // here we are using the 'os' node.js native, and passing in data on the number of CPUs
-  //         cpus: os.cpus(),
-
-  //         // NOTE: here we are polluting the global data object across all 'requests' because we are using the 'bootstrap' hook.
-  //         // This is bad practice in this example because cpus is only used by Home.svelte, but it is illustrated to show how you could
-  //         // add global data.
-
-  //         // IMPORTANT: If you want to add data to a specific route only, you should probably do it in your /route.js for that route.
-  //       },
-  //     };
-  //   },
-  // },
+  {
+    hook: 'bootstrap',
+    name: 'populateDataForAllRequests',
+    description:
+      'The goal of this hook is to show you that you can get data from anywhere and add it to the data object.',
+    priority: 50,
+    run: async ({ data }) => {
+      // when you uncomment this, check the homepage for a new box at the top.
+      let simpleRoutes = [{name: 'testdata1', slug: 'simple' },
+            {name: 'testdata2', slug: 'simple2' }];
+      return {
+        data: {
+          ...data,
+          simpleRoutes,
+        },
+      };
+    },
+  },
 
   // If you'd like to see specific examples of how to do things that you think could help improve the template please create a GH issue.
 ];

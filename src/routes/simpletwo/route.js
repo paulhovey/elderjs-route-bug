@@ -6,9 +6,9 @@ module.exports = {
     return data.simpleRoutes;
   },
   // the permalink function takes a 'request' object and returns a relative permalink.
-  // In this case "/simple/"
+  // In this case "/local/"
   // If permalink() is ommited, ({request}) => `/${request.slug}/` will be placed as the default.
-  permalink: ({ request }) => `/${request.slug}/`,
+  permalink: ({ request }) => `/simpletwo/${request.slug}/`,
   data: async ({ request }) => {
     // The data function populates an object that will be in available in our Svelte template under the 'data' key.
     return {
